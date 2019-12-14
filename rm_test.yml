@@ -1,0 +1,13 @@
+---
+- hosts: eos
+  connection: ansible.netcommon.network_cli
+  collections:
+  - ansible.netcommon
+  - arista.eos
+  gather_facts: False
+  tasks:
+  - name: gather facts
+    eos_interfaces:
+      config:
+        - name: Ethernet1
+          enabled: True
